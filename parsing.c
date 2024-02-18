@@ -6,13 +6,13 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:00:25 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/12 20:49:10 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/18 19:46:22 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	check_for_error(char *str)
+int	check_for_error(char *str)
 {
 	int		i;
 
@@ -30,7 +30,7 @@ static int	check_for_error(char *str)
 	return (1);
 }
 
-static void	check_and_push(char **input, t_stack **head)
+void	check_and_push(char **input, t_stack **head)
 {
 	while (*input)
 	{
@@ -56,11 +56,11 @@ t_stack	*ft_parsing(int ac, char **av, t_stack	*head)
 	while (j < ac)
 	{
 		str = ft_split(av[j], ' ');
-		if (*str == (void *)0)
+		if (*str == (void *)0 || check_for_error(*str) == 0)
 			ft_error();
 		check_and_push(str, &head);
 		j++;
+		is_free(str);
 	}
-	// index_stack(head);
 	return (head);
 }

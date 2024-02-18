@@ -6,13 +6,13 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:27:15 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/06 10:24:40 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/18 02:57:07 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_is_duplicated(t_stack *head, int new_nbr)
+int	ft_is_duplicated(t_stack *head, int new_nbr)
 {
 	while (head)
 	{

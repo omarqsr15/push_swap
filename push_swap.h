@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:17:37 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/15 19:25:47 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/18 19:40:16 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ typedef struct s_stack
 
 typedef struct s_chunk
 {
-	int chunk;
+	int	chunk;
 	int	min;
-	int max;
+	int	max;
 }	t_chunk;
 
 // parsing functions
@@ -61,17 +61,21 @@ void	ft_rrr(t_stack **heada, t_stack **headb);
 // indexing stack functions
 void	index_stack(t_stack *head);
 t_stack	*find_max(t_stack *head);
-t_stack	*find_max_2(t_stack *head);
-t_stack	find_min(t_stack *head);
+t_stack	*find_max_500(t_stack *head);
+t_stack	*find_max_2_500(t_stack *head);
 int		find_pos_min(t_stack *head);
-void	index_stack_b(t_stack **head);
+void	position_stack(t_stack **head);
+int		check_index(t_stack *heada, int min, int max);
+int		to_top_count(t_stack *headb, t_stack *max);
 // swap function
 void	ft_sort_3(t_stack **head);
 void	ft_sort_5(t_stack **heada, t_stack **headb);
 void	ft_sort_100(t_stack **heada, t_stack **headb);
+void	ft_sort_500(t_stack **heada, t_stack **headb);
 // push b to a functions
-void	push_big(t_stack **heada, t_stack **headb, t_stack big, t_stack big_2);
-int	nbr_mv(t_stack *headb, t_stack *max);
 void	ft_push_to_a(t_stack **heada, t_stack **headb);
+
+void	*is_free(char **out);
+void	ft_lstclear(t_stack **lst);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 16:49:24 by oel-qasr          #+#    #+#              #
-#    Updated: 2024/02/12 20:51:24 by oel-qasr         ###   ########.fr        #
+#    Updated: 2024/02/18 19:39:37 by oel-qasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRCS =  ft_moves_push.c ft_moves_rr.c ft_moves_rrr.c ft_moves_ss.c \
-		ft_push.c ft_split.c ft_sort_3_5.c ft_sort_100.c My_tools_0.c \
-		My_tools_1.c My_tools_2.c parsing.c push_swap.c \
+		ft_push.c ft_split.c ft_sort_3_5.c ft_sort_100.c ft_sort_500.c \
+		My_tools_0.c My_tools_1.c My_tools_2.c parsing.c push_swap.c ft_free.c\
 
 SRCS_B =\
 

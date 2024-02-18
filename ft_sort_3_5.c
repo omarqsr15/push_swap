@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:54:58 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/15 18:52:55 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/18 02:50:22 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_sort_3(t_stack **head)
 	else
 		return ;
 }
+
 void	ft_sort_5(t_stack **heada, t_stack **headb)
 {
 	int	index;
@@ -36,12 +37,12 @@ void	ft_sort_5(t_stack **heada, t_stack **headb)
 		index = find_pos_min(*heada);
 		if (index >= ft_lstsize(*heada) / 2)
 		{
-			while(index++ < ft_lstsize(*heada))
+			while (index++ < ft_lstsize(*heada))
 				ft_rra(heada, 1);
 		}
 		else
 		{
-			while(index-- > 0)
+			while (index-- > 0)
 				ft_ra(heada, 1);
 		}
 		ft_pb(headb, heada);
@@ -51,5 +52,3 @@ void	ft_sort_5(t_stack **heada, t_stack **headb)
 	ft_pa(heada, headb);
 	index_stack(*heada);
 }
-
-

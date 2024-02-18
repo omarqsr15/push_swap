@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:56:27 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/15 18:48:17 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/17 23:26:46 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,19 @@ int	find_pos_min(t_stack *head)
 	return (pos);
 }
 
-t_stack	find_min(t_stack *head)
+void	position_stack(t_stack **head)
 {
-	t_stack	min;
+	t_stack	*tmp;
+	int		i;
 
-	min = *head;
-	while (min.next)
+	tmp = *head;
+	i = 0;
+	while ((tmp))
 	{
-		if (min.index == 0)
-			break ;
-		min = *min.next;
+		(tmp)->position = i;
+		i++;
+		(tmp) = (tmp)->next;
 	}
-	return (min);
 }
 
 t_stack	*find_max(t_stack *head)
@@ -87,18 +88,4 @@ t_stack	*find_max(t_stack *head)
 		head = head->next;
 	}
 	return (node_max);
-}
-void	index_stack_b(t_stack **head)
-{
-	t_stack	*tmp;
-	int	i;
-
-	tmp = *head;
-	i = 0;
-	while (tmp)
-	{
-		tmp->position = i;
-		i++;
-		tmp = tmp->next;
-	}
 }

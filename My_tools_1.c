@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:54:23 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/13 18:13:52 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/18 02:57:26 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	ft_lstsize(t_stack *lst)
 	}
 	return (count);
 }
+
 void	ft_lstadd_front(t_stack **lst, t_stack *newx)
 {
 	if (!newx || !lst)

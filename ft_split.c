@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:05:33 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/03 17:57:23 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/18 19:36:32 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static	int	split_strlen(const char *str, char d)
 	return (i);
 }
 
-static void	*is_free(char **out)
+void	*is_free(char **out)
 {
 	size_t	i;
 
