@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:54:54 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/18 21:18:15 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:35:10 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,45 +40,6 @@ long	ft_atoi(char *str)
 		str++;
 	}
 	return (re * sg);
-}
-
-t_stack	*find_max_500(t_stack *head)
-{
-	t_stack	*max;
-	t_stack	*current;
-
-	if (!head)
-		return (NULL);
-	max = NULL;
-	current = head;
-	while (current)
-	{
-		if (max == NULL || current->content > max->content)
-			max = current;
-		current = current->next;
-	}
-	return (max);
-}
-
-t_stack	*find_max_2_500(t_stack *head)
-{
-	t_stack	*max1;
-	t_stack	*max2;
-	t_stack	*current;
-
-	if (!head && head->index != 0)
-		return (NULL);
-	max1 = find_max_500(head);
-	max2 = NULL;
-	current = head;
-	while (current)
-	{
-		if (current != max1 && (max2 == NULL
-				|| current->content > max2->content))
-			max2 = current;
-		current = current->next;
-	}
-	return (max2);
 }
 
 t_stack	*find_max_2(t_stack *head)

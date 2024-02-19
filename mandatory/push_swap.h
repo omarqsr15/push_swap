@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:17:37 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/19 03:04:26 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:38:15 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void	ft_rrr(t_stack **heada, t_stack **headb);
 void	index_stack(t_stack *head);
 t_stack	*find_max(t_stack *head);
 t_stack	*find_max_2(t_stack *head);
-t_stack	*find_max_500(t_stack *head);
-t_stack	*find_max_2_500(t_stack *head);
 int		find_pos_min(t_stack *head);
 void	position_stack(t_stack **head);
 int		check_index(t_stack *heada, int min, int max);
@@ -72,7 +70,6 @@ int		to_top_count(t_stack *headb, t_stack *max);
 void	ft_sort_3(t_stack **head);
 void	ft_sort_5(t_stack **heada, t_stack **headb);
 void	ft_sort_100(t_stack **heada, t_stack **headb);
-void	ft_sort_500(t_stack **heada, t_stack **headb);
 // push b to a functions
 
 void	*is_free(char **out);

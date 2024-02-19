@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:59:56 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/19 18:20:12 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:38:42 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ void	ft_push_to_a(t_stack **heada, t_stack **headb)
 	max_node2 = NULL;
 	while (*headb)
 	{
-		max_node1 = find_max_500(*headb);
-		max_node2 = find_max_2_500(*headb);
+		max_node1 = find_max(*headb);
+		max_node2 = find_max_2(*headb);
 		if (to_top_count(*headb, max_node1) <= to_top_count(*headb, max_node2))
 		{
 			ft_push_max(heada, headb, max_node1);
@@ -103,7 +103,10 @@ void	ft_sort_100(t_stack **heada, t_stack **headb)
 	int		cnst;
 
 	index_stack(*heada);
-	chunks.chunk = ft_lstsize(*heada) / 5;
+	if (ft_lstsize(*heada) > 5 && ft_lstsize(*heada) <= 200)
+		chunks.chunk = ft_lstsize(*heada) / 5;
+	else
+		chunks.chunk = ft_lstsize(*heada) / 9;
 	cnst = chunks.chunk;
 	chunks.min = 0;
 	chunks.max = cnst;

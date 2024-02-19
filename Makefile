@@ -6,7 +6,7 @@
 #    By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 16:49:24 by oel-qasr          #+#    #+#              #
-#    Updated: 2024/02/19 17:28:47 by oel-qasr         ###   ########.fr        #
+#    Updated: 2024/02/19 18:37:19 by oel-qasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRCS =  mandatory/ft_moves_push.c mandatory/ft_moves_rr.c mandatory/ft_moves_rrr.c mandatory/ft_moves_ss.c \
-		mandatory/ft_push.c mandatory/ft_split.c mandatory/ft_sort_3_5.c mandatory/ft_sort_100.c mandatory/ft_sort_500.c \
+		mandatory/ft_push.c mandatory/ft_split.c mandatory/ft_sort_3_5.c mandatory/ft_sort_100.c \
 		mandatory/My_tools_0.c mandatory/My_tools_1.c mandatory/My_tools_2.c mandatory/parsing.c mandatory/push_swap.c mandatory/ft_free.c\
 
 SRCS_B =\
