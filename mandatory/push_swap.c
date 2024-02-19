@@ -11,16 +11,12 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
-void fin()
-{
-	system("leaks push_swap");
-}
 
 int	main(int ac, char **av)
 {
 	t_stack	*heada;
 	t_stack	*headb;
+
 	heada = NULL;
 	headb = NULL;
 	heada = ft_parsing(ac, av, heada);
@@ -31,7 +27,6 @@ int	main(int ac, char **av)
 		ft_sort_100(&heada, &headb);
 	else if (ft_lstsize(heada) > 200)
 		ft_sort_500(&heada, &headb);
-	// atexit(fin);
 	ft_lstclear(&heada);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:59:56 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/19 16:20:29 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:20:23 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_push_to_b_500(t_stack **heada, t_stack **headb, t_chunk *chunks)
 			if ((*heada)->index < (chunks->chunk + len) / 2)
 			{
 				ft_pb(headb, heada);
-				if (*heada != NULL && check_index(*heada, chunks->min, chunks->max) == 0)
+				if (*heada != NULL
+					&& check_index(*heada, chunks->min, chunks->max) == 0)
 					ft_rr(heada, headb);
 				else
 					ft_rb(headb, 1);
