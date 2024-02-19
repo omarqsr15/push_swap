@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:59:56 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/18 17:12:41 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:54:34 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void	ft_push_to_b(t_stack **heada, t_stack **headb, t_chunk *chunks)
 			if ((*heada)->index < (chunks->chunk + len) / 2)
 			{
 				ft_pb(headb, heada);
-				ft_rb(headb, 1);
+				if (*heada != NULL && check_index(*heada, chunks->min, chunks->max) == 0)
+					ft_rr(heada, headb);
+				else
+					ft_rb(headb, 1);
 			}
 			else
 				ft_pb(headb, heada);
@@ -53,16 +56,43 @@ void	ft_push_max(t_stack **heada, t_stack **headb, t_stack *node)
 	position_stack(headb);
 }
 
+int	to_top_count(t_stack *headb, t_stack *max)
+{
+	int	i;
+	int	j;
+	int	x;
+
+	i = ft_lstsize(headb);
+	j = max->position;
+	if (j <= i / 2)
+		x = j;
+	else
+		x = i - j - 1;
+	return (x);
+}
+
 void	ft_push_to_a(t_stack **heada, t_stack **headb)
 {
 	t_stack	*max_node1;
+	t_stack	*max_node2;
 
 	max_node1 = NULL;
-	max_node1 = find_max(*headb);
+	max_node2 = NULL;
 	while (*headb)
 	{
-		max_node1 = find_max(*headb);
-		ft_push_max(heada, headb, max_node1);
+		max_node1 = find_max_500(*headb);
+		max_node2 = find_max_2_500(*headb);
+		if (to_top_count(*headb, max_node1) <= to_top_count(*headb, max_node2))
+		{
+			ft_push_max(heada, headb, max_node1);
+			ft_push_max(heada, headb, max_node2);
+		}
+		else
+		{
+			ft_push_max(heada, headb, max_node2);
+			ft_push_max(heada, headb, max_node1);
+			ft_sa(heada, 1);
+		}
 	}
 }
 
@@ -72,7 +102,6 @@ void	ft_sort_100(t_stack **heada, t_stack **headb)
 	int		cnst;
 
 	index_stack(*heada);
-	chunks.chunk = ft_lstsize(*heada) / 5;
 	chunks.chunk = ft_lstsize(*heada) / 5;
 	cnst = chunks.chunk;
 	chunks.min = 0;

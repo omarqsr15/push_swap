@@ -6,17 +6,11 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:54:54 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/18 19:22:46 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/18 21:18:15 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_error(void)
-{
-	write(2, "Error\n", 6);
-	exit(1);
-}
 
 int	check_index(t_stack *heada, int min, int max)
 {
@@ -67,6 +61,27 @@ t_stack	*find_max_500(t_stack *head)
 }
 
 t_stack	*find_max_2_500(t_stack *head)
+{
+	t_stack	*max1;
+	t_stack	*max2;
+	t_stack	*current;
+
+	if (!head && head->index != 0)
+		return (NULL);
+	max1 = find_max_500(head);
+	max2 = NULL;
+	current = head;
+	while (current)
+	{
+		if (current != max1 && (max2 == NULL
+				|| current->content > max2->content))
+			max2 = current;
+		current = current->next;
+	}
+	return (max2);
+}
+
+t_stack	*find_max_2(t_stack *head)
 {
 	t_stack	*max1;
 	t_stack	*max2;

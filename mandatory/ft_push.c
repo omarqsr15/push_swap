@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/18 19:38:16 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/18 19:46:26 by oel-qasr         ###   ########.fr       */
+/*   Created: 2024/02/03 19:27:15 by oel-qasr          #+#    #+#             */
+/*   Updated: 2024/02/19 03:03:21 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstclear(t_stack **lst)
+int	ft_is_duplicated(t_stack *head, int new_nbr)
 {
-	t_stack	*tmp;
-
-	if (!lst)
-		return ;
-	while (*lst)
+	while (head)
 	{
-		tmp = (*lst)->next;
-		free (tmp);
-		*lst = tmp;
+		if (head->content == new_nbr)
+			return (0);
+		head = head->next;
 	}
-	free(*lst);
-	*lst = NULL;
+	return (1);
+}
+
+void	ft_push(t_stack **head, long content)
+{
+	t_stack	*new_node;
+
+	if (ft_is_duplicated(*head, content))
+	{
+		new_node = ft_lstnew(content);
+		if (!new_node)
+			return ;
+		ft_lstadd_back(head, new_node);
+	}
+	else
+		ft_error();
 }

@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:56:27 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/17 23:26:46 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/18 21:08:38 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,18 @@ void	position_stack(t_stack **head)
 
 t_stack	*find_max(t_stack *head)
 {
-	int		max;
-	t_stack	*node_max;
+	t_stack	*max;
+	t_stack	*current;
 
-	max = head->content;
-	node_max = head;
-	while (head)
+	if (!head)
+		return (NULL);
+	max = NULL;
+	current = head;
+	while (current)
 	{
-		if (head->content > max)
-		{
-			max = head->content;
-			node_max = head;
-		}
-		head = head->next;
+		if (max == NULL || current->content > max->content)
+			max = current;
+		current = current->next;
 	}
-	return (node_max);
+	return (max);
 }

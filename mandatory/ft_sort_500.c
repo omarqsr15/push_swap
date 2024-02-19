@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:59:56 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/18 19:29:34 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:20:29 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void	ft_push_to_b_500(t_stack **heada, t_stack **headb, t_chunk *chunks)
 			if ((*heada)->index < (chunks->chunk + len) / 2)
 			{
 				ft_pb(headb, heada);
-				ft_rb(headb, 1);
+				if (*heada != NULL && check_index(*heada, chunks->min, chunks->max) == 0)
+					ft_rr(heada, headb);
+				else
+					ft_rb(headb, 1);
 			}
 			else
 				ft_pb(headb, heada);
@@ -53,7 +56,7 @@ void	ft_push_max_500(t_stack **heada, t_stack **headb, t_stack *node)
 	position_stack(headb);
 }
 
-int	to_top_count(t_stack *headb, t_stack *max)
+int	to_top_count_500(t_stack *headb, t_stack *max)
 {
 	int	i;
 	int	j;
@@ -75,7 +78,6 @@ void	ft_push_a_500(t_stack **heada, t_stack **headb)
 
 	max_node1 = NULL;
 	max_node2 = NULL;
-
 	while (*headb)
 	{
 		max_node1 = find_max_500(*headb);
