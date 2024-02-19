@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:17:37 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/19 18:38:15 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/19 21:37:15 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		to_top_count(t_stack *headb, t_stack *max);
 // swap function
 void	ft_sort_3(t_stack **head);
 void	ft_sort_5(t_stack **heada, t_stack **headb);
-void	ft_sort_100(t_stack **heada, t_stack **headb);
+void	ft_sort_big(t_stack **heada, t_stack **headb);
 // push b to a functions
 
 void	*is_free(char **out);

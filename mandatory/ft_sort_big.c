@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:59:56 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/19 18:38:42 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/19 21:37:31 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	ft_push_to_a(t_stack **heada, t_stack **headb)
 	}
 }
 
-void	ft_sort_100(t_stack **heada, t_stack **headb)
+void	ft_sort_big(t_stack **heada, t_stack **headb)
 {
 	t_chunk	chunks;
 	int		cnst;
