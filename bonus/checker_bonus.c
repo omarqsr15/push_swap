@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:01:42 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 16:55:48 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:11:30 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,16 @@ int	check_is_sorted(t_stack *heada)
 	return (1);
 }
 
-void while_(char **str)
+void	while_(char **str)
 {
 	char	*inputs;
 	char	*s1;
+
 	while (1)
 	{
 		inputs = get_next_line(0);
-		if(inputs == NULL)
-			break;
+		if (inputs == NULL)
+			break ;
 		if (!check_input(inputs))
 		{
 			free(*str);
@@ -111,7 +112,6 @@ int	main(int ac, char **av)
 	heada = NULL;
 	heada = ft_parsing(ac, av, heada);
 	headb = NULL;
-
 	while_(&str);
 	instr = ft_split(str, '\n');
 	free (str);

@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:54:54 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 15:52:39 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:12:48 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ long	ft_atoi(char *str)
 	}
 	return (re * sg);
 }
+
 void	ft_putstr(char *s)
 {
 	int	i;
@@ -52,6 +53,7 @@ void	ft_putstr(char *s)
 		i++;
 	}
 }
+
 int	ft_strncmp(const char *s1, const char *s2)
 {
 	size_t	i;
