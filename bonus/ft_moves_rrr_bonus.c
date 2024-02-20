@@ -1,52 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moves_ss.c                                      :+:      :+:    :+:   */
+/*   ft_moves_rrr_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 13:18:29 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 00:36:36 by oel-qasr         ###   ########.fr       */
+/*   Created: 2024/02/06 21:29:25 by oel-qasr          #+#    #+#             */
+/*   Updated: 2024/02/20 02:02:43 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "checker_bonus.h"
 
-void	ft_sa(t_stack **heada, int pass)
+void	ft_rra(t_stack **heada, int pass)
 {
 	t_stack	*first;
-	t_stack	*second;
+	t_stack	*last;
 
 	if (*heada == NULL || (*heada)->next == NULL)
 		return ;
 	first = *heada;
-	second = (*heada)->next;
-	first->next = second->next;
-	second->next = first;
-	*heada = second;
+	last = ft_lstlast(*heada);
+	while ((*heada)->next != last)
+		*heada = (*heada)->next;
+	(*heada)->next = NULL;
+	last->next = first;
+	*heada = last;
 	if (pass == 1)
-		write(1, "sa\n", 3);
+		write(1, "rra\n", 4);
 }
 
-void	ft_sb(t_stack **headb, int pass)
+void	ft_rrb(t_stack **headb, int pass)
 {
 	t_stack	*first;
-	t_stack	*second;
+	t_stack	*last;
 
 	if (*headb == NULL || (*headb)->next == NULL)
 		return ;
 	first = *headb;
-	second = (*headb)->next;
-	first->next = second->next;
-	second->next = first;
-	*headb = second;
+	last = ft_lstlast(*headb);
+	while ((*headb)->next != last)
+		*headb = (*headb)->next;
+	(*headb)->next = NULL;
+	last->next = first;
+	*headb = last;
 	if (pass == 1)
-		write(1, "sb\n", 3);
+		write(1, "rrb\n", 4);
 }
 
-void	ft_ss(t_stack **heada, t_stack **headb)
+void	ft_rrr(t_stack **heada, t_stack **headb)
 {
-	ft_sa(heada, 0);
-	ft_sb(headb, 0);
-	write(1, "ss\n", 3);
+	ft_rra(heada, 0);
+	ft_rrb(headb, 0);
+	write(1, "rrr\n", 4);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.c                                  :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:01:42 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 01:50:29 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/20 02:02:33 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "checker_bonus.h"
 
 void	do_the_moves(char *inputs, t_stack **heada, t_stack **headb)
 {
@@ -46,6 +46,7 @@ int	main(int ac, char **av)
 	t_stack	*headb;
 	char	*inputs;
 
+	heada = NULL;
 	heada = ft_parsing(ac, av, heada);
 	headb = NULL;
 	while (1)

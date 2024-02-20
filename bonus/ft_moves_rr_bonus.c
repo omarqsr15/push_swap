@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moves_rrr.c                                     :+:      :+:    :+:   */
+/*   ft_moves_rr_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 21:29:25 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 00:36:39 by oel-qasr         ###   ########.fr       */
+/*   Created: 2024/02/06 18:20:38 by oel-qasr          #+#    #+#             */
+/*   Updated: 2024/02/20 02:02:26 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "checker_bonus.h"
 
-void	ft_rra(t_stack **heada, int pass)
+void	ft_ra(t_stack **heada, int pass)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -21,16 +21,14 @@ void	ft_rra(t_stack **heada, int pass)
 		return ;
 	first = *heada;
 	last = ft_lstlast(*heada);
-	while ((*heada)->next != last)
-		*heada = (*heada)->next;
-	(*heada)->next = NULL;
+	*heada = first -> next;
 	last->next = first;
-	*heada = last;
+	first->next = NULL;
 	if (pass == 1)
-		write(1, "rra\n", 4);
+		write(1, "ra\n", 3);
 }
 
-void	ft_rrb(t_stack **headb, int pass)
+void	ft_rb(t_stack **headb, int pass)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -39,18 +37,16 @@ void	ft_rrb(t_stack **headb, int pass)
 		return ;
 	first = *headb;
 	last = ft_lstlast(*headb);
-	while ((*headb)->next != last)
-		*headb = (*headb)->next;
-	(*headb)->next = NULL;
+	*headb = first -> next;
 	last->next = first;
-	*headb = last;
+	first->next = NULL;
 	if (pass == 1)
-		write(1, "rrb\n", 4);
+		write(1, "rb\n", 3);
 }
 
-void	ft_rrr(t_stack **heada, t_stack **headb)
+void	ft_rr(t_stack **heada, t_stack **headb)
 {
-	ft_rra(heada, 0);
-	ft_rrb(headb, 0);
-	write(1, "rrr\n", 4);
+	ft_ra(heada, 0);
+	ft_rb(headb, 0);
+	write(1, "rr\n", 3);
 }

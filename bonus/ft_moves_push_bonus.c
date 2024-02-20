@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moves_push.c                                    :+:      :+:    :+:   */
+/*   ft_moves_push_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:43:29 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 00:36:44 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/20 02:02:39 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "checker_bonus.h"
 
 void	ft_pa(t_stack **heada, t_stack **headb)
 {
