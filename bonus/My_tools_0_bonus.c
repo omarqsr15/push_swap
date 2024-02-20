@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:54:54 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 02:02:59 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/20 15:52:39 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,10 @@ int	ft_strncmp(const char *s1, const char *s2)
 		i++;
 	}
 	return (0);
+}
+
+void	ft_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
 }

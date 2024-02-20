@@ -6,7 +6,7 @@
 #    By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 16:49:24 by oel-qasr          #+#    #+#              #
-#    Updated: 2024/02/20 02:04:32 by oel-qasr         ###   ########.fr        #
+#    Updated: 2024/02/20 15:53:35 by oel-qasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS =  mandatory/ft_moves_push.c mandatory/ft_moves_rr.c mandatory/ft_moves_rrr
 
 SRCS_B =	bonus/checker_bonus.c bonus/ft_moves_push_bonus.c bonus/ft_moves_rr_bonus.c bonus/ft_moves_rrr_bonus.c \
 			bonus/ft_moves_ss_bonus.c bonus/ft_push_bonus.c bonus/get_next_line_bonus.c bonus/get_next_line_utils_bonus.c \
-			bonus/My_tools_0_bonus.c bonus/parsing_bonus.c \
+			bonus/My_tools_0_bonus.c bonus/parsing_bonus.c bonus/ft_split_bonus.c bonus/My_tools_1_bonus.c\
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,56 +6,122 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:01:42 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 02:02:33 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:55:48 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
+#include <stdlib.h>
 
 void	do_the_moves(char *inputs, t_stack **heada, t_stack **headb)
 {
-	if (ft_strncmp("pa\n", inputs) == 0)
+	if (ft_strncmp("pa", inputs) == 0)
 		ft_pa(heada, headb);
-	else if (ft_strncmp("pb\n", inputs) == 0)
+	else if (ft_strncmp("pb", inputs) == 0)
 		ft_pb(headb, heada);
-	else if (ft_strncmp("ra\n", inputs) == 0)
+	else if (ft_strncmp("ra", inputs) == 0)
 		ft_ra(heada, 0);
-	else if (ft_strncmp("rb\n", inputs) == 0)
+	else if (ft_strncmp("rb", inputs) == 0)
 		ft_rb(headb, 0);
-	else if (ft_strncmp("rr\n", inputs) == 0)
+	else if (ft_strncmp("rr", inputs) == 0)
 		ft_rr(heada, headb);
-	else if (ft_strncmp("rra\n", inputs) == 0)
+	else if (ft_strncmp("rra", inputs) == 0)
 		ft_rra(heada, 0);
-	else if (ft_strncmp("rrb\n", inputs) == 0)
+	else if (ft_strncmp("rrb", inputs) == 0)
 		ft_rrb(headb, 0);
-	else if (ft_strncmp("rrr\n", inputs) == 0)
+	else if (ft_strncmp("rrr", inputs) == 0)
 		ft_rrr(heada, headb);
-	else if (ft_strncmp("sa\n", inputs) == 0)
+	else if (ft_strncmp("sa", inputs) == 0)
 		ft_sa(heada, 0);
-	else if (ft_strncmp("sb\n", inputs) == 0)
+	else if (ft_strncmp("sb", inputs) == 0)
 		ft_sb(headb, 0);
-	else if (ft_strncmp("ss\n", inputs) == 0)
+	else if (ft_strncmp("ss", inputs) == 0)
 		ft_ss(heada, headb);
 	else
 		ft_error();
+}
+
+int	check_input(char *inputs)
+{
+	if (ft_strncmp("pa\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("pb\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("ra\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("rb\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("rr\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("rra\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("rrb\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("rrr\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("sa\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("sb\n", inputs) == 0)
+		return (1);
+	else if (ft_strncmp("ss\n", inputs) == 0)
+		return (1);
+	return (0);
+}
+
+int	check_is_sorted(t_stack *heada)
+{
+	while (heada->next)
+	{
+		if (heada->content > heada->next->content)
+			return (0);
+		heada = heada->next;
+	}
+	return (1);
+}
+
+void while_(char **str)
+{
+	char	*inputs;
+	char	*s1;
+	while (1)
+	{
+		inputs = get_next_line(0);
+		if(inputs == NULL)
+			break;
+		if (!check_input(inputs))
+		{
+			free(*str);
+			ft_error();
+		}
+		s1 = *str;
+		*str = ft_strjoin(*str, inputs);
+		free(s1);
+		free(inputs);
+	}
 }
 
 int	main(int ac, char **av)
 {
 	t_stack	*heada;
 	t_stack	*headb;
-	char	*inputs;
+	char	*str;
+	char	**instr;
+	int		i;
 
 	heada = NULL;
 	heada = ft_parsing(ac, av, heada);
 	headb = NULL;
-	while (1)
-	{
-		inputs = get_next_line(0);
-		if(inputs == NULL)
-			break;
-		do_the_moves(inputs, &heada, &headb);
-		free(inputs);
-	}
+
+	while_(&str);
+	instr = ft_split(str, '\n');
+	free (str);
+	i = 0;
+	while (instr[i])
+		do_the_moves(instr[i++], &heada, &headb);
+	if (check_is_sorted(heada) && ft_lstsize(headb) == 0)
+		write (1, "OK\n", 3);
+	else
+		write (1, "KO\n", 3);
+	is_free(instr);
 	return (0);
 }

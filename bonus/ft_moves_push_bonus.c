@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:43:29 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 02:02:39 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:16:13 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_pa(t_stack **heada, t_stack **headb)
 	*heada = *headb;
 	*headb = (*headb)-> next;
 	(*heada)-> next = tmp;
-	write(1, "pa\n", 3);
 }
 
 void	ft_pb(t_stack **headb, t_stack **heada)
@@ -35,5 +34,4 @@ void	ft_pb(t_stack **headb, t_stack **heada)
 	*headb = *heada;
 	*heada = (*heada)-> next;
 	(*headb)-> next = tmp;
-	write(1, "pb\n", 3);
 }
