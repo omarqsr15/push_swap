@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:54:54 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/19 18:35:10 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:28:12 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	check_index(t_stack *heada, int min, int max)
 		return (1);
 	return (0);
 }
-
 long	ft_atoi(char *str)
 {
 	long	re;
@@ -34,11 +33,13 @@ long	ft_atoi(char *str)
 			sg *= -1;
 		str++;
 	}
-	while (*str >= '0' && *str <= '9' && re < (long)INT_MAX + 1)
+	while (*str >= '0' && *str <= '9')
 	{
 		re = re * 10 + *str - '0';
 		str++;
 	}
+	if ((re > INT_MAX && sg == 1) || (-re < INT_MIN && sg == -1))
+		ft_error();
 	return (re * sg);
 }
 

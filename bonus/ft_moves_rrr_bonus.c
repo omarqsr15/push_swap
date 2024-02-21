@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 21:29:25 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 02:02:43 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/20 19:41:15 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,4 @@ void	ft_rrr(t_stack **heada, t_stack **headb)
 {
 	ft_rra(heada, 0);
 	ft_rrb(headb, 0);
-	write(1, "rrr\n", 4);
 }

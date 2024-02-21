@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   My_tools_2_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 16:50:07 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/21 19:38:07 by oel-qasr         ###   ########.fr       */
+/*   Created: 2024/02/20 20:04:33 by oel-qasr          #+#    #+#             */
+/*   Updated: 2024/02/20 20:12:35 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
+
+void	check_n_2(t_stack **heada, t_stack **headb)
+{
+	if (check_is_sorted(*heada) && ft_lstsize(*headb) == 0)
+		write (1, "OK\n", 3);
+	else
+	{
+		ft_lstclear(headb);
+		write (1, "KO\n", 3);
+	}
+	ft_lstclear(heada);
+}
 
 int	check_is_sorted(t_stack *heada)
 {
+	if (!heada)
+		return (0);
 	while (heada->next)
 	{
 		if (heada->content > heada->next->content)
@@ -23,29 +37,18 @@ int	check_is_sorted(t_stack *heada)
 	return (1);
 }
 
-int	main(int ac, char **av)
+void	ft_lstclear(t_stack **lst)
 {
-	t_stack	*heada;
-	t_stack	*headb;
+	t_stack	*tmp;
 
-	if (ac < 2)
-		return (0);
-	heada = NULL;
-	headb = NULL;
-	heada = ft_parsing(ac, av, heada);
-	if (check_is_sorted(heada))
-		return (0);
-	if (ft_lstsize(heada) == 2)
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		ft_sa(&heada, 1);
-		ft_lstclear(&heada);
-		return (0);
+		tmp = (*lst)->next;
+		free (*lst);
+		*lst = tmp;
 	}
-	index_stack(heada);
-	if (ft_lstsize(heada) <= 5)
-		ft_sort_5(&heada, &headb);
-	else
-		ft_sort_big(&heada, &headb);
-	ft_lstclear(&heada);
-	return (0);
+	free(*lst);
+	*lst = NULL;
 }

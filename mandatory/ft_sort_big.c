@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_100.c                                      :+:      :+:    :+:   */
+/*   ft_sort_big.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:59:56 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/19 21:37:31 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:31:20 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	ft_push_max(t_stack **heada, t_stack **headb, t_stack *node)
 {
 	int	i;
 
+	if (ft_lstsize(*headb) == 0 || node == NULL)
+		return ;
 	i = node->position;
 	if (i <= ft_lstsize(*headb) / 2)
 	{
@@ -83,12 +85,14 @@ void	ft_push_to_a(t_stack **heada, t_stack **headb)
 	{
 		max_node1 = find_max(*headb);
 		max_node2 = find_max_2(*headb);
-		if (to_top_count(*headb, max_node1) <= to_top_count(*headb, max_node2))
+		if (max_node2 == NULL)
+			ft_push_max(heada, headb, max_node1);
+		else if (to_top_count(*headb, max_node1) <= to_top_count(*headb, max_node2))
 		{
 			ft_push_max(heada, headb, max_node1);
 			ft_push_max(heada, headb, max_node2);
 		}
-		else
+		else if (to_top_count(*headb, max_node1) > to_top_count(*headb, max_node2))
 		{
 			ft_push_max(heada, headb, max_node2);
 			ft_push_max(heada, headb, max_node1);

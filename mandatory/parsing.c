@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:00:25 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/19 21:37:51 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:26:57 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_stack	*ft_parsing(int ac, char **av, t_stack	*head)
 	while (j < ac)
 	{
 		str = ft_split(av[j], ' ');
-		if (*str == (void *)0 || check_for_error(*str) == 0)
+		if (*str == (void *)0)
 			ft_error();
 		check_and_push(str, &head);
 		j++;

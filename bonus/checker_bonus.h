@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:30:05 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 17:14:40 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/20 20:10:59 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ int		ft_strncmp(const char *s1, const char *s2);
 void	ft_putstr(char *s);
 // push functions
 void	ft_push(t_stack **head, long content);
+void	check_n_2(t_stack **heada, t_stack **headb);
+int		check_1(char **instr, t_stack *heada);
+int		check_is_sorted(t_stack *heada);
 //moves functions
 void	ft_sa(t_stack **heada, int pass);
 void	ft_sb(t_stack **headb, int pass);
