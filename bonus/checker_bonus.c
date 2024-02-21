@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:01:42 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/20 20:11:18 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:09:06 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,8 @@ int	main(int ac, char **av)
 	char	**instr;
 	int		i;
 
+	if (ac == 1)
+		exit(EXIT_SUCCESS);
 	heada = NULL;
 	heada = ft_parsing(ac, av, heada);
 	headb = NULL;
