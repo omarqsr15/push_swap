@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 16:50:07 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/21 19:38:07 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/02/25 08:12:13 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	main(int ac, char **av)
 	heada = NULL;
 	headb = NULL;
 	heada = ft_parsing(ac, av, heada);
-	if (check_is_sorted(heada))
-		return (0);
+	if (check_is_sorted(heada) == 1)
+		exit(EXIT_SUCCESS);
 	if (ft_lstsize(heada) == 2)
 	{
 		ft_sa(&heada, 1);
