@@ -6,7 +6,7 @@
 /*   By: oel-qasr <oel-qasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:54:54 by oel-qasr          #+#    #+#             */
-/*   Updated: 2024/02/29 01:30:11 by oel-qasr         ###   ########.fr       */
+/*   Updated: 2024/03/01 16:23:47 by oel-qasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	check_index(t_stack *heada, int min, int max)
 		return (1);
 	return (0);
 }
+
 long	ft_atoi(char *str)
 {
 	long	re;
